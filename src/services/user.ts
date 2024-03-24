@@ -3,8 +3,6 @@ import { prismaClient } from "../lib/db";
 import {createHmac, randomBytes} from 'node:crypto'
 import JWT from 'jsonwebtoken'
 
-const JWT_SECRET = 'appsecret@8080'
-
 export interface CreateUserPayload {
     firstName: string
     lastName?: string
@@ -38,6 +36,14 @@ class UserService {
             })
         }
 
+    public static decodeJWTToken(token: string) {
+        return JWT.verify(token, process.env.JWT_SECRET)
+    }
+
+    public static getUserById(id: string) {
+        return prismaClient.user.findUnique({where: {id}})
+    }
+
     private static getUserByEmail(email: string) {
         return prismaClient.user.findUnique({where: {email}})
     }
@@ -55,7 +61,7 @@ class UserService {
             throw new Error('Incorrect Password Provided')
         }
         
-        const token = JWT.sign({ id: user.id, email: user.email}, JWT_SECRET)
+        const token = JWT.sign({ id: user.id, email: user.email}, process.env.JWT_SECRET)
         return token;
     }   
 }
