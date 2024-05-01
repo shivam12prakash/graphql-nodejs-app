@@ -1,6 +1,6 @@
 # GraphQL with Node.js
 
-GraphQL server using Node.js and Docker with Prisma and PostgreSQL.
+ A GraphQL server leveraging Node.js and Docker, integrating Prisma with PostgreSQL for data management. Incorporates JsonWebToken for authentication and harnesses GraphQL context for streamlined operations.
 
 ![gql](https://github.com/shivam12prakash/graphql-nodejs-app/assets/65006707/15ea6652-bfa0-49e1-a9d2-b5f74f11be28)
 
