@@ -1,6 +1,6 @@
 # GraphQL with Node.js
 
-GraphQL server with Prisma(ORM) and Docker.
+GraphQL server using Node.js and Docker with Prisma and PostgreSQL.
 
 ![gql](https://github.com/shivam12prakash/graphql-nodejs-app/assets/65006707/15ea6652-bfa0-49e1-a9d2-b5f74f11be28)
 
@@ -11,10 +11,10 @@ GraphQL server with Prisma(ORM) and Docker.
 The project is built with the help of these technologies:
 
 * ![Node.js]
-* GraphQl
+* GraphQL
 * Docker
 * Prisma
-* Postgres
+* PostgrSQL
 * JWT
 * ![Express.js]
 
